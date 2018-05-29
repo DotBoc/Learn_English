@@ -28,7 +28,7 @@ namespace Learn_English
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=DAIENKAIENTEI;Initial Catalog=Learn_English;Integrated Security=True");
+            SqlConnection sqlCon = new SqlConnection(@"SERVER=37.6.228.90; DATABASE= Learn_English; USER ID = TestUser; PASSWORD = TestPassword ;");
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)

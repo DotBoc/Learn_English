@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Learn_English"
         mc:Ignorable="d"
-        Title="Login" Height="480" Width="600" FontSize="24" Background="#FFE5E8CC">
+        Title="Login" Height="400" Width="300" FontSize="24" Background="#FFE5E8CC">
     <Border Background="#FF4F444E" CornerRadius="20" Margin="20">
         <StackPanel Margin="20">
             <Label Content="Login" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
@@ -13,12 +13,7 @@
             <Label Content="Username" Foreground="White"/>
             <TextBox Name="txtUsername" Background="#545d6a" Foreground="White" FontSize="18"/>
             <Label Content="Password" Foreground="White"/>
-            <PasswordBox Name="txtPassword" Background="#545d6a" Foreground="White" FontSize="18"/>
-            <Label Content="Role" Foreground="White"/>
-            <ComboBox>
-                <ComboBoxItem IsSelected="True">Student</ComboBoxItem>
-                <ComboBoxItem>Teacher</ComboBoxItem>
-            </ComboBox>
+            <PasswordBox Name="txtPassword" Background="#545d6a" Foreground="White" FontSize="18"/>           
             <Button Name="btnSubmit" Click="btnSubmit_Click" Content="Submit" Margin="60 45" Background="#545d6a" Foreground="White" FontSize="18"/>
         </StackPanel>
     </Border>

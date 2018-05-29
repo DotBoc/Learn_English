@@ -6,8 +6,19 @@
         xmlns:local="clr-namespace:Learn_English"
         mc:Ignorable="d"
         Title="TeacherMain" Height="450" Width="800">
-    <Grid>
-        <Label Content="Teacher&#xD;&#xA;" HorizontalAlignment="Left" Height="84" Margin="252,63,0,0" VerticalAlignment="Top" Width="341"/>
-
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="Help" Header="_Help">
+                <MenuItem x:Name="Manual" Header="_Manual">
+                    <MenuItem.Icon>
+                        <Image Source="S:\ProgramData\Microsoft\VisualStudio\repos\Learn_English\Learn_English\Resources\Icons\user-manual.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="About" Header="_About"/>
+            </MenuItem>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
+    
 </Window>
