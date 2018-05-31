@@ -28,7 +28,7 @@ namespace Learn_English
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"SERVER=37.6.228.90; DATABASE= Learn_English; USER ID = TestUser; PASSWORD = TestPassword ;");
+            SqlConnection sqlCon = new SqlConnection(@"SERVER=79.107.181.7; DATABASE= Learn_English; USER ID = TestUser; PASSWORD = TestPassword ;");
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)
@@ -41,7 +41,7 @@ namespace Learn_English
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    String rolequery = "SELECT usertype FROM Users WHERE username=@Username AND password=@Password";
+                    String rolequery = "SELECT role FROM Users WHERE username=@Username AND password=@Password";
                     SqlCommand rolesqlCmd = new SqlCommand(rolequery, sqlCon);
                     rolesqlCmd.CommandType = CommandType.Text;
                     rolesqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
@@ -49,26 +49,23 @@ namespace Learn_English
                     SqlDataReader reader = rolesqlCmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        var roleString = reader.GetString(0);
-                        if (roleString == "student")
-                        {
-                            StudentMain studentMain = new StudentMain();
-                            studentMain.Show();
-                            this.Close();
-                            break;
-                        }
-                        if (roleString == "teacher")
+                        var roleBoolean = reader.GetBoolean(0);
+                        if (roleBoolean)
                         {
                             TeacherMain teacherMain = new TeacherMain();
                             teacherMain.Show();
                             this.Close();
                             break;
-
                         }
                         else
                         {
-                            MessageBox.Show("Error in database. Please contact the admin.");
-                        }
+
+                            StudentMain studentMain = new StudentMain();
+                            studentMain.Show();
+                            this.Close();
+                            break;
+
+                        }                        
                     }                      
                 }
                 else
