@@ -1,0 +1,17 @@
+﻿<Window x:Class="Learn_English.UserSeperation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Learn_English"
+        mc:Ignorable="d"
+        Title="Learn English" Height="400" Width="500" Background="#FF86BEF5" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Image x:Name="img_student" HorizontalAlignment="Left" Height="100" Margin="100,120,0,0" VerticalAlignment="Top" Width="100" Source="student.png" OpacityMask="Black"    />
+        <Image x:Name="img_teacher" HorizontalAlignment="Right" Height="200" Margin="0,70,100,0" VerticalAlignment="Top" Width="148.5" Source="teacher.png" OpacityMask="Black"  />
+        <Button x:Name="bt_teacher" Content="Teacher" HorizontalAlignment="Right" Margin="0,250,136,0" VerticalAlignment="Top" Width="75" Click="bt_teacher_Click"/>
+        <Button x:Name="bt_student" Content="Student" HorizontalAlignment="Left" Margin="112.5,250.04,0,0" VerticalAlignment="Top" Width="75" Click="bt_student_Click" />
+        <Label x:Name="lbl_selecet_role" Content="Please select your role" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" Width="492" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>

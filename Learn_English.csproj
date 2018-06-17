@@ -35,8 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,12 +58,63 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddQuestion.xaml.cs">
+      <DependentUpon>AddQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddQuestionHandler.cs" />
+    <Compile Include="AnswerHandler.cs" />
+    <Compile Include="AnswerProvider.cs" />
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="Exam.xaml.cs">
+      <DependentUpon>Exam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamQuestions.xaml.cs">
+      <DependentUpon>ExamQuestions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Learn_EnglishDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Learn_EnglishDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Learn_EnglishDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Learn_EnglishDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoadGrid.cs" />
+    <Compile Include="QuestionProvider.cs" />
+    <Compile Include="ScoreHandler.cs" />
+    <Compile Include="ScoreProvider.cs" />
+    <Compile Include="StudentLogin.xaml.cs">
+      <DependentUpon>StudentLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentMain.xaml.cs">
       <DependentUpon>StudentMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLogin.xaml.cs">
+      <DependentUpon>TeacherLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="TeacherMain.xaml.cs">
       <DependentUpon>TeacherMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestSelector.xaml.cs">
+      <DependentUpon>TestSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserSeperation.xaml.cs">
+      <DependentUpon>UserSeperation.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamQuestions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,11 +134,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StudentLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TeacherLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TeacherMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserSeperation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,16 +177,55 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Learn_EnglishDataSet.xsc">
+      <DependentUpon>Learn_EnglishDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Learn_EnglishDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Learn_EnglishDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Learn_EnglishDataSet.xss">
+      <DependentUpon>Learn_EnglishDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Learn_EnglishDataSet1.xsc">
+      <DependentUpon>Learn_EnglishDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Learn_EnglishDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Learn_EnglishDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Learn_EnglishDataSet1.xss">
+      <DependentUpon>Learn_EnglishDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\user-manual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\students.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="student.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,21 +15,28 @@ using System.Windows.Shapes;
 namespace Learn_English
 {
     /// <summary>
-    /// Interaction logic for TeacherMain.xaml
+    /// Interaction logic for UserSeperation.xaml
     /// </summary>
-    public partial class TeacherMain : Window
+    public partial class UserSeperation : Window
     {
-        public TeacherMain()
+        public UserSeperation()
         {
             InitializeComponent();
-            lb_welcome.Content = "Welcome , " + TeacherLogin.teacher_username + " .";
         }
 
-        private void bt_add_exam_Click(object sender, RoutedEventArgs e)
+        private void bt_student_Click(object sender, RoutedEventArgs e)
         {
-            AddQuestion addQuestion = new AddQuestion();
-            addQuestion.Show();
+            StudentLogin studentLogin = new StudentLogin();
+            studentLogin.Show();
             this.Close();
+        }
+
+        private void bt_teacher_Click(object sender, RoutedEventArgs e)
+        {
+            TeacherLogin teacherLogin = new TeacherLogin();
+            teacherLogin.Show();
+            this.Close();
+
         }
     }
 }

@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Learn_English"
-             StartupUri="Login.xaml">
+             StartupUri="UserSeperation.xaml">
     <Application.Resources>
          
     </Application.Resources>

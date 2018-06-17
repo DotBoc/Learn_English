@@ -1,0 +1,33 @@
+﻿<Window x:Class="Learn_English.AddQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Learn_English"
+        mc:Ignorable="d"
+        Title="AddQuestion" Height="700" Width="600" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:Learn_EnglishDataSet x:Key="learn_EnglishDataSet"/>
+        <CollectionViewSource x:Key="coursesViewSource" Source="{Binding Courses, Source={StaticResource learn_EnglishDataSet}}"/>
+        <local:Learn_EnglishDataSet1 x:Key="learn_EnglishDataSet1"/>
+        <CollectionViewSource x:Key="coursesViewSource1" Source="{Binding Courses, Source={StaticResource learn_EnglishDataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource coursesViewSource}">
+        <Label x:Name="lbl_Add_Questions" Content="Add Questions" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="200" FontSize="24" HorizontalContentAlignment="Center"/>
+        <TextBox Name="txt_Title"  FontSize="18" Margin="120,75,20,480"/>
+        <TextBox x:Name="txt_Answer_a"  FontSize="18" Margin="120,233,20,397"/>
+        <TextBox x:Name="txt_Answer_b"  FontSize="18" Margin="120,293,20,337"/>
+        <TextBox x:Name="txt_Answer_c"  FontSize="18" Margin="120,353,20,277"/>
+        <TextBox x:Name="txt_Answer_d"  FontSize="18" Margin="125,413,15,217"/>
+        <TextBox x:Name="txt_Answer_correct"  FontSize="18" Margin="191,473,25,157"/>
+        <Label x:Name="lbl_Title" Content="Title:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="90" FontSize="24"/>
+        <Label x:Name="lbl_Answer_a" Content="_Answer A:" HorizontalAlignment="Left" Margin="5,230,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <Label x:Name="lbl_Answer_b" Content="_Answer B:" HorizontalAlignment="Left" Margin="5,290,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <Label x:Name="lbl_Answer_c" Content="_Answer C:" HorizontalAlignment="Left" Margin="5,350,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <Label x:Name="lbl_Answer_d" Content="_Answer D:" HorizontalAlignment="Left" Margin="5,410,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <Label x:Name="lbl_Answer_correct" Content="_Correct Answer:" HorizontalAlignment="Left" Margin="5,470,0,0" VerticalAlignment="Top" Width="186" FontSize="24"/>
+        <Label x:Name="lbl_Course" Content="_Course:" HorizontalAlignment="Left" Margin="5,530,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <ComboBox x:Name="cbox_Course" HorizontalAlignment="Left" Margin="125,530,0,0" VerticalAlignment="Top" Width="447" Height="41.923" DisplayMemberPath="course_name" ItemsSource="{Binding Source={StaticResource coursesViewSource1}}" FontSize="18" />
+        <Button x:Name="bt_Add" Content="Add Question" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="150" FontSize="22" Margin="25" Click="bt_Add_Click"/>
+    </Grid>
+</Window>

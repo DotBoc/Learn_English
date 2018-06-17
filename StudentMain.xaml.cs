@@ -22,6 +22,15 @@ namespace Learn_English
         public StudentMain()
         {
             InitializeComponent();
+            lb_welcome.Content = "Welcome , " + StudentLogin.student_username + " .";
+        }
+
+        private void bt_test_Click(object sender, RoutedEventArgs e)
+        {
+            TestSelector testSelector = new TestSelector();
+            testSelector.Show();
+            this.Close();
+            
         }
     }
 }

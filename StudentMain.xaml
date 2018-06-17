@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Learn_English"
         mc:Ignorable="d"
         Title="StudentMain" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem x:Name="Help" Header="_Help">
+    <Grid>
+        <Menu Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="Aqua">
+            <MenuItem x:Name="Help" Header="_Help" Width="792" Background="Azure">
                 <MenuItem x:Name="Manual" Header="_Manual">
                     <MenuItem.Icon>
                         <Image Source="S:\ProgramData\Microsoft\VisualStudio\repos\Learn_English\Learn_English\Resources\Icons\user-manual.png" />
@@ -18,7 +18,9 @@
                 <MenuItem x:Name="About" Header="_About"/>
             </MenuItem>
         </Menu>
-        <TextBox AcceptsReturn="True" />
-    </DockPanel>    
-    
+        <Label x:Name="lb_welcome" Content="sdas" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,355,428,0" VerticalAlignment="Top"/>
+        <Button x:Name="bt_test" Content="Take a Test" HorizontalAlignment="Left" Margin="112,216,0,0" VerticalAlignment="Top" Width="150" Click="bt_test_Click"  />
+        <Button x:Name="bt_study" Content="Study" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,164.273,0,0"  />
+        <Image x:Name="img_student" HorizontalAlignment="Right" VerticalAlignment="Top"  Source="student.png" OpacityMask="Black" Height="300" Margin="0,48,52,0"  />
+    </Grid>
 </Window>

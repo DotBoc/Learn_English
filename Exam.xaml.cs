@@ -15,21 +15,15 @@ using System.Windows.Shapes;
 namespace Learn_English
 {
     /// <summary>
-    /// Interaction logic for TeacherMain.xaml
+    /// Interaction logic for Exam.xaml
     /// </summary>
-    public partial class TeacherMain : Window
+    public partial class Exam : Window
     {
-        public TeacherMain()
+        public Exam(int course_id)
         {
             InitializeComponent();
-            lb_welcome.Content = "Welcome , " + TeacherLogin.teacher_username + " .";
-        }
+            Container.Content = new ExamQuestions(course_id);
 
-        private void bt_add_exam_Click(object sender, RoutedEventArgs e)
-        {
-            AddQuestion addQuestion = new AddQuestion();
-            addQuestion.Show();
-            this.Close();
-        }
+        }       
     }
 }

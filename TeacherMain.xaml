@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Learn_English"
         mc:Ignorable="d"
-        Title="TeacherMain" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem x:Name="Help" Header="_Help">
+        Title="TeacherMain" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Menu Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="Aqua">
+            <MenuItem x:Name="Help" Header="_Help" Width="792" Background="Azure">
                 <MenuItem x:Name="Manual" Header="_Manual">
                     <MenuItem.Icon>
                         <Image Source="S:\ProgramData\Microsoft\VisualStudio\repos\Learn_English\Learn_English\Resources\Icons\user-manual.png" />
@@ -18,7 +18,10 @@
                 <MenuItem x:Name="About" Header="_About"/>
             </MenuItem>
         </Menu>
-        <TextBox AcceptsReturn="True" />
-    </DockPanel>
-    
+        <Label x:Name="lb_welcome" Content="sdas" Width="502" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,341,280,0" Height="53"/>
+        <Button x:Name="bt_add_student" Content="Add Student" HorizontalAlignment="Left" Margin="112.5,229.797,0,0" VerticalAlignment="Top" Width="150"  />
+        <Button x:Name="bt_add_exam" Content="Add Questions" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,164.273,0,0" Click="bt_add_exam_Click" />
+        <Image x:Name="img_teacher" HorizontalAlignment="Right" VerticalAlignment="Top"  Source="teacher.png" OpacityMask="Black" Height="419"  />
+    </Grid>
+
 </Window>
