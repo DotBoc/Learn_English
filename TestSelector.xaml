@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="TestSelector" Loaded="Load" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFDA9696">
-         <Label x:Name="lb_title" Content="Select the test you want to take" HorizontalAlignment="Left" VerticalAlignment="Top" Width="384" FontSize="22" Height="50" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+         <Label x:Name="lb_title" Content="Select the test you want to take" HorizontalAlignment="Left" VerticalAlignment="Top" Width="394" FontSize="22" Height="50" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="lb_test" Content="Test :" HorizontalAlignment="Left" Margin="52,81,0,0" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="49" Width="73"/>
         <ComboBox x:Name="cb_test" HorizontalAlignment="Center" VerticalAlignment="Top" Width="164" Margin="0,93,0,0" Height="31" ItemsSource="{Binding }" DisplayMemberPath="course_name" SelectedValuePath="course_id"/>
-        <Button x:Name="bt_start" Content="Start!" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" Width="108" Height="28" Click="bt_start_Click"/>
+        <Button x:Name="bt_start" Content="Start!" HorizontalAlignment="Center" Margin="62,172,224,0" VerticalAlignment="Top" Width="108" Height="28" Click="bt_start_Click"/>
         <DataGrid x:Name="dtgrd_student_course" Margin="0,229,0,0" ItemsSource="{Binding }" ColumnWidth="*" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <Button x:Name="bt_back" Content="Back" HorizontalAlignment="Center" Margin="224,172,62,0" VerticalAlignment="Top" Width="108" Height="28" Click="bt_back_Click" />
 
 
     </Grid>

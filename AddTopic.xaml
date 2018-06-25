@@ -1,0 +1,25 @@
+﻿<Window x:Class="Learn_English.AddTopic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Learn_English"
+        mc:Ignorable="d"
+        Title="AddTopic" Height="700" Width="600" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:Learn_EnglishDataSet x:Key="learn_EnglishDataSet"/>
+        <CollectionViewSource x:Key="coursesViewSource" Source="{Binding Courses, Source={StaticResource learn_EnglishDataSet}}"/>
+        <local:Learn_EnglishDataSet1 x:Key="learn_EnglishDataSet1"/>
+        <CollectionViewSource x:Key="coursesViewSource1" Source="{Binding Courses, Source={StaticResource learn_EnglishDataSet1}}"/>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="lbl_Add_Questions" Content="Add Topics" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="200" FontSize="24" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lbl_Title" Content="Title:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="90" FontSize="24"/>
+        <TextBox Name="txt_Title"  FontSize="18" Margin="120,75,20,552"/>
+        <Label x:Name="lbl_Content" Content="_Content:" HorizontalAlignment="Left" Margin="5,150,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <TextBox x:Name="txt_Content"  FontSize="18" Margin="120,150,20,160"/>
+        <Label x:Name="lbl_Course" Content="_Course:" HorizontalAlignment="Left" Margin="5,530,0,0" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <ComboBox x:Name="cbox_Course" HorizontalAlignment="Left" Margin="125,530,0,0" VerticalAlignment="Top" Width="447" Height="41.923" DisplayMemberPath="course_name" ItemsSource="{Binding Source={StaticResource coursesViewSource1}}" FontSize="18" />
+        <Button x:Name="bt_Add" Content="Add Topic" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="150" FontSize="22" Margin="25" Click="bt_Add_Click" />
+    </Grid>
+</Window>

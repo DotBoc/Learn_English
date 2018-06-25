@@ -13,8 +13,7 @@
         <RadioButton x:Name="rbt_answer_b" Content="B" Margin="490,160,150,0" VerticalAlignment="Top" Height="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ClickMode="Press" FlowDirection="RightToLeft" FontSize="24"/>
         <RadioButton x:Name="rbt_answer_c" Content="C" Margin="150,310,490,0" VerticalAlignment="Top" Height="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ClickMode="Press" FontSize="24"/>
         <RadioButton x:Name="rbt_answer_d" Content="D" Margin="490,310,150,0" VerticalAlignment="Top" Height="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ClickMode="Press" FlowDirection="RightToLeft" FontSize="24"/>
-        <Button x:Name="bt_submit" Content="Submit" VerticalAlignment="Bottom" Width="181" Margin="300,0,300,60" HorizontalAlignment="Center" Click="bt_submit_Click" FontSize="24"/>
-        <Label  x:Name="lbl_next_question" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="363,263,0,0" Width="146"/>
+        <Button x:Name="bt_submit" Content="Submit" VerticalAlignment="Bottom" Width="181" Margin="300,0,300,60" HorizontalAlignment="Center" Click="bt_submit_Click" FontSize="24"/>        
         <Label  x:Name="lbl_score" Content="Score : 0" VerticalAlignment="Bottom"  Margin="550,100,0,55" FontSize="24" />
 
 

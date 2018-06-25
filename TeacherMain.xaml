@@ -19,9 +19,11 @@
             </MenuItem>
         </Menu>
         <Label x:Name="lb_welcome" Content="sdas" Width="502" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,341,280,0" Height="53"/>
-        <Button x:Name="bt_add_student" Content="Add Student" HorizontalAlignment="Left" Margin="112.5,229.797,0,0" VerticalAlignment="Top" Width="150"  />
-        <Button x:Name="bt_add_exam" Content="Add Questions" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,164.273,0,0" Click="bt_add_exam_Click" />
+        <Button x:Name="bt_add_topic" Content="Add Topic" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,120,0,0" Click="bt_add_topic_Click"  />
+        <Button x:Name="bt_add_exam" Content="Add Questions" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,180,0,0" Click="bt_add_exam_Click" />
         <Image x:Name="img_teacher" HorizontalAlignment="Right" VerticalAlignment="Top"  Source="teacher.png" OpacityMask="Black" Height="419"  />
+        <Button x:Name="bt_manage_student" Content="Manage Students" HorizontalAlignment="Left" Margin="112.5,240,0,0" VerticalAlignment="Top" Width="150" Click="bt_manage_student_Click"   />
+
     </Grid>
 
 </Window>

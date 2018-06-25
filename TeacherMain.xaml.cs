@@ -28,8 +28,22 @@ namespace Learn_English
         private void bt_add_exam_Click(object sender, RoutedEventArgs e)
         {
             AddQuestion addQuestion = new AddQuestion();
-            addQuestion.Show();
-            this.Close();
+            addQuestion.Show();            
+        }
+
+        private void bt_manage_student_Click(object sender, RoutedEventArgs e)
+        {
+            //ManageStudents manageStudents = new ManageStudents();
+            // manageStudents.Show();
+
+            ManageStudent manageStudent = new ManageStudent();
+            manageStudent.Show();
+        }
+
+        private void bt_add_topic_Click(object sender, RoutedEventArgs e)
+        {
+            AddTopic addTopic = new AddTopic();
+            addTopic.Show();
         }
     }
 }

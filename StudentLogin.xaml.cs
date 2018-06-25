@@ -45,12 +45,12 @@ namespace Learn_English
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    String id_query = "SELECT student_uid FROM Students WHERE teacher_username=@Username AND teacher_password=@Password";
+                    String id_query = "SELECT student_uid FROM Students WHERE student_username=@Username AND student_password=@Password";
                     SqlCommand id_sqlCmd = new SqlCommand(id_query, sqlConnection);
                     id_sqlCmd.CommandType = CommandType.Text;
                     id_sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
                     id_sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
-                    student_uid = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    student_uid = Convert.ToInt32(id_sqlCmd.ExecuteScalar());
                     student_username = txtUsername.Text;
                     StudentMain studentMain = new StudentMain();
                     studentMain.Show();

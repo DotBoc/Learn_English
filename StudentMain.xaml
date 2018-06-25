@@ -20,7 +20,7 @@
         </Menu>
         <Label x:Name="lb_welcome" Content="sdas" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,355,428,0" VerticalAlignment="Top"/>
         <Button x:Name="bt_test" Content="Take a Test" HorizontalAlignment="Left" Margin="112,216,0,0" VerticalAlignment="Top" Width="150" Click="bt_test_Click"  />
-        <Button x:Name="bt_study" Content="Study" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,164.273,0,0"  />
+        <Button x:Name="bt_study" Content="Study" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="150"  Margin="112.5,164.273,0,0" Click="bt_study_Click"  />
         <Image x:Name="img_student" HorizontalAlignment="Right" VerticalAlignment="Top"  Source="student.png" OpacityMask="Black" Height="300" Margin="0,48,52,0"  />
     </Grid>
 </Window>

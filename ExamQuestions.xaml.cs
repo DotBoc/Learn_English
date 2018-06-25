@@ -52,8 +52,7 @@ namespace Learn_English
             rbt_answer_b.Content = connect.returnconnection_string("SELECT question_b FROM Questions WHERE question_fk_course =" + course_id + " AND question_id = " + question_key);
             rbt_answer_c.Content = connect.returnconnection_string("SELECT question_c FROM Questions WHERE question_fk_course =" + course_id + " AND question_id = " + question_key);
             rbt_answer_d.Content = connect.returnconnection_string("SELECT question_d FROM Questions WHERE question_fk_course =" + course_id + " AND question_id = " + question_key);
-            correct_answer = connect.returnconnection_string("SELECT question_correct FROM Questions WHERE question_fk_course =" + course_id + " AND question_id = " + question_key);
-            lbl_next_question.Content = connect.returnconnection_string("SELECT min(question_id) FROM Questions WHERE question_fk_course = " + current_course_id + " AND question_id > " + question_key);            
+            correct_answer = connect.returnconnection_string("SELECT question_correct FROM Questions WHERE question_fk_course =" + course_id + " AND question_id = " + question_key);                     
         }
 
         private void bt_submit_Click(object sender, RoutedEventArgs e)
@@ -107,6 +106,10 @@ namespace Learn_English
 
                     MessageBox.Show(user_message);
                     MessageBox.Show("Exam is over. Please wait.");
+
+                    TestSelector testSelector = new TestSelector();
+                    testSelector.Show();
+                    
                 }
                 else
                 {

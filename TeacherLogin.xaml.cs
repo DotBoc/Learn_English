@@ -52,7 +52,7 @@ namespace Learn_English
                     id_sqlCmd.CommandType = CommandType.Text;
                     id_sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
                     id_sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
-                    teacher_uid = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    teacher_uid = Convert.ToInt32(id_sqlCmd.ExecuteScalar());
                     teacher_username = txtUsername.Text;
                     TeacherMain teacherMain = new TeacherMain();
                     teacherMain.Show();

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Learn_English
 {
     /// <summary>
-    /// Interaction logic for AddQuestion.xaml
+    /// Interaction logic for AddTopic.xaml
     /// </summary>
-    public partial class AddQuestion : Window
+    public partial class AddTopic : Window
     {
-        public AddQuestion()
+        public AddTopic()
         {
             InitializeComponent();
         }
@@ -35,22 +35,17 @@ namespace Learn_English
             coursesViewSource1.View.MoveCurrentToFirst();
         }
 
-
         private void bt_Add_Click(object sender, RoutedEventArgs e)
         {
-            QuestionProvider question = new QuestionProvider();
-            question.question_title = txt_Title.Text;
-            question.question_a = txt_Answer_a.Text;
-            question.question_b = txt_Answer_b.Text;
-            question.question_c = txt_Answer_c.Text;
-            question.question_d = txt_Answer_d.Text;
-            question.question_correct = txt_Answer_correct.Text;
-            question.question_date = System.DateTime.Now;
-            question.question_fk_teacher = TeacherLogin.teacher_uid;
-            question.question_fk_course = cbox_Course.SelectedIndex + 1;
+            TopicProvider topic = new TopicProvider();
+            topic.topic_title = txt_Title.Text;
+            topic.topic_text = txt_Content.Text;
+            topic.topic_date = System.DateTime.Now;
+            topic.topic_fk_teacher = TeacherLogin.teacher_uid;
+            topic.topic_fk_course = cbox_Course.SelectedIndex + 1;
 
-            AddQuestionHandler addQuestionHandler = new AddQuestionHandler();
-            string user_message = addQuestionHandler.insert_Question(question);
+            AddTopicHandler addTopicHandler = new AddTopicHandler();
+            string user_message = addTopicHandler.insert_Topic(topic);
             MessageBox.Show(user_message);
         }
     }

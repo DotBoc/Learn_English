@@ -31,13 +31,22 @@ namespace Learn_English
             string grid_query = "SELECT student_course_fk_course_id , student_course_grade FROM Student_Course WHERE student_course_fk_student_uid =" + StudentLogin.student_uid;
             LoadGrid loadGrid = new LoadGrid(grid_query);
             dtgrd_student_course.DataContext = loadGrid.FillGrid();
-            dtgrd_student_course.Columns[0].Header = "Course Code";
-            dtgrd_student_course.Columns[1].Header = "Grade";
+            try
+            {
+                dtgrd_student_course.Columns[0].Header = "Course Code";
+                dtgrd_student_course.Columns[1].Header = "Grade";
+                string combo_box_query = "SELECT * from Courses";
+                LoadGrid loadComboBox = new LoadGrid(combo_box_query);
+                cb_test.ItemsSource = loadComboBox.FillGrid().DefaultView;
+            }                
             //https://blogs.msdn.microsoft.com/jaimer/2009/01/20/styling-microsofts-wpf-datagrid/ * 
 
-            string combo_box_query = "SELECT * from Courses";
-            LoadGrid loadComboBox = new LoadGrid(combo_box_query);
-            cb_test.ItemsSource = loadComboBox.FillGrid().DefaultView;            
+            catch (ArgumentOutOfRangeException example)
+            {
+                MessageBox.Show("Please complete a course before doing the test.");
+            }
+
+                   
         }
 
         private void bt_start_Click(object sender, RoutedEventArgs e)
@@ -50,6 +59,7 @@ namespace Learn_English
             {
                 Exam exam = new Exam(course_id);
                 exam.Show();
+                this.Close();
             }
             else
             {
@@ -59,6 +69,15 @@ namespace Learn_English
             
             //https://stackoverflow.com/questions/2749842/how-to-bind-combobox-with-datatable
         }
+
+        private void bt_back_Click(object sender, RoutedEventArgs e)
+        {
+            StudentMain studentMain = new StudentMain();
+            studentMain.Show();
+            this.Close();
+        }
+
+       
     }
 }
 

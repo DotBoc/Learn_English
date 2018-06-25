@@ -32,5 +32,12 @@ namespace Learn_English
             this.Close();
             
         }
+
+        private void bt_study_Click(object sender, RoutedEventArgs e)
+        {
+            TopicSelector topicSelector = new TopicSelector();
+            topicSelector.Show();
+            this.Close();
+        }
     }
 }
