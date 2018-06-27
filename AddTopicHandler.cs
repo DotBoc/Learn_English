@@ -44,5 +44,9 @@ namespace Learn_English
             }
         }
 
+        internal void Show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
